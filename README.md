@@ -25,23 +25,29 @@ Cleanup tasks
 
 
 
-My notes:
+My Notes:
+----------------
 
  I was able to complete the following user stories:
  
  - A user should not be able to complete a task when creating it.
+
 Solution: removing the field on the create task form that let users mark as complete on creation. Add initialize method on Task model to set complete to false
 
  - A user can filter their view by complete or incomplete tasks.
+
 Solution: use params to specify if the index view for tasks should show completed tasks or all tasks (users can view these filtered states through links on the list#show page) . Also added methods to the List model to easily filter for tasks that are complete vs. incomplete
 
  - A user's default view is filtered to show only incomplete tasks.
+
 Solution: when first directed to a list#show page, the default list view shows only incomplete tasks
 
  - A user should be able to keep multiple lists.
+
 Solution: update Task model to belong to new List model which in-turn belongs to new User model. Users can view their current lists and then click into a single list to see its tasks.
 
  - A user should have access to only their tasks. (may require devise or a creative, lightweight auth system)
+ 
 Solution: implement user authentication using Bcrypt gem, and add helper methods to redirect users to the welcome page if they try to access a list or tasks that are not theirs.
 
 
