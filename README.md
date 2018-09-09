@@ -47,13 +47,13 @@ Solution: when first directed to a list#show page, the default list view shows o
 Solution: update Task model to belong to new List model which in-turn belongs to new User model. Users can view their current lists and then click into a single list to see its tasks.
 
  - A user should have access to only their tasks. (may require devise or a creative, lightweight auth system)
- 
+
 Solution: implement user authentication using Bcrypt gem, and add helper methods to redirect users to the welcome page if they try to access a list or tasks that are not theirs.
 
 
 I was not able to complete the following tasks due to timeboxing:
 
- - CLeanup tasks 
+ - Cleanup tasks 
  - A user viewing a task should see a history of all its changes. (task audit trail)
  - A user should be able to see a history of all completed tasks and associated actions. (app audit trail)
 
