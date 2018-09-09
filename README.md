@@ -62,6 +62,8 @@ https://github.com/paper-trail-gem/paper_trail
 
 
 Summary of Challenge:
+----------------
+
 
 After reading the user stories I knew that I wanted to start by creating new models for User and List as I knew that nesting those resources early on would make a huge difference in the behavior of the app and the other stories. After that came user authentication, in which I opted for the Bcrypt gem. From there I was able to focus on setting up the different views and controllers in order to knock out as much of the task filtering functionality as I could.
 
