@@ -20,8 +20,12 @@ class TasksController < ApplicationController
     @list = List.find_by(id: params[:list_id], user_id: @user.id)
     @task = @list.tasks.new(task_params)
 
-    @task.save
-    redirect_to user_list_path(@user, @list)
+    if @task.save
+      redirect_to user_list_path(@user, @list)
+    else
+      session[:error] = "Task cannot be blank"
+      redirect_to user_list_path(@user, @list)
+    end
   end
 
 

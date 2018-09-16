@@ -23,6 +23,9 @@
 <a href="<%= user_list_tasks_path(@user, @list, {show_all: true}) %>">View All Tasks</a>
 
 <h2>Add a task:</h2>
+<% if @error %>
+    <%= @error %>
+<% end %>
 
 <%= form_for @task, url: "/users/#{@user.id}/lists/#{@list.id}/tasks" do |f| %>
   <p>

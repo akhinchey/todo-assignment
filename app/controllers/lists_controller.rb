@@ -3,6 +3,8 @@ class ListsController < ApplicationController
 
     def show
         @task = Task.new
+        @error ||= session[:error]
+        session[:error] = nil
     end
 
     def new
